@@ -1,11 +1,46 @@
-<div align="center">
+# TIDELOCK
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+A 3D first-person survival and factory-automation browser game set on **Orrin**, a tidally locked moon orbiting the banded gas giant **Vael**.
 
-  <h1>Built with AI Studio</h2>
+Built with React, TypeScript, Tailwind CSS, and Three.js with procedural terrain, PBR textures, custom GLSL sky/water shaders, Web Audio synthesis, and persistent local saves.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## Features
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+- **First-Person Exploration & Survival**: Survive across six distinct biomes—Daylight Plains, Twilight Belt, Subsolar Ridge, High Tide Flats, Far Side Dark, and the Near Sea Trench—while managing Health, Oxygen ($\text{O}_2$), Hydration, and Energy.
+- **Dynamic Orbit & Tide Cycle**: Experience rotating **Day**, **Dusk**, **Eclipse**, and **Dawn** phases as Vael looms in the sky, driving rising tides across the flats and altering solar power output.
+- **Factory Building & Power Grid**: Place Miners, Smelters, Constructors, Solar Panels, Tide Turbines, Thermal Vents, Power Poles (with sagged catenary power cables), Storage Crates, and Conveyor Belts with 100% dismantle refund.
+- **Vehicles & Deep-Sea Diving**: Build and pilot the **Hover Sled**, **All-Terrain Rover**, and **Needle Submersible** to traverse rugged ridges and dive into the Near Sea Trench.
+- **Three Story Endings**: Repair the Comms Array for Rescue, stabilize the Rift Seal, or embrace Integration deep beneath the sea.
 
-</div>
+## Controls
+
+| Action | Key / Input |
+| :--- | :--- |
+| Move | `W A S D` |
+| Sprint | `Shift` |
+| Jump / Dive | `Space` / `C` |
+| Scan / Mine / Attack | `Left Mouse` (hold to auto-mine) |
+| Interact / Enter Vehicle | `E` |
+| Dismantle Structure (100% refund) | `X` |
+| Hotbar Select | `1–8` or `Mouse Wheel` |
+| Inventory & Craft | `Tab` |
+| Build Menu | `B` |
+| Power Grid Overview | `P` |
+| World Map | `M` |
+| Pause / Cancel Build | `Esc` / `Right Mouse` |
+
+## Local Development
+
+```bash
+npm install
+npm run dev
+```
+
+Open `http://localhost:3000` in your browser.
+
+### Build & Type-Check
+
+```bash
+npm run lint
+npm run build
+```

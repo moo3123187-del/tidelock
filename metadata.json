@@ -1,0 +1,8 @@
+{
+  "name": "TIDELOCK",
+  "description": "A 3D survival and factory-building adventure set on Orrin, a tidally locked moon orbiting the giant planet Tessara.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
