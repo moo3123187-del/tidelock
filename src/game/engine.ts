@@ -1490,7 +1490,12 @@ export class TidelockEngine {
     if (this.paused) return;
     this.audio.init();
     try {
-      this.renderer.domElement.requestPointerLock?.();
+      const maybePromise = this.renderer.domElement.requestPointerLock?.() as unknown;
+      if (maybePromise && typeof (maybePromise as Promise<void>).catch === 'function') {
+        (maybePromise as Promise<void>).catch(() => {
+          // Fallback drag-look works when browser rejects pointer lock cooldown
+        });
+      }
     } catch {
       // Fallback drag-look works
     }
@@ -1752,9 +1757,9 @@ export class TidelockEngine {
 
   public loadGame(slot: number): boolean {
     this.saveSlot = slot;
-    const raw = localStorage.getItem(SAVE_KEY_PREFIX + slot);
-    if (!raw) return false;
     try {
+      const raw = localStorage.getItem(SAVE_KEY_PREFIX + slot);
+      if (!raw) return false;
       const data = JSON.parse(raw) as SaveSlotData;
       this.orbitSeconds = data.orbitSeconds ?? 60;
       this.stats = { ...data.stats };
